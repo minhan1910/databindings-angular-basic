@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eventOddGamePractice';
+  numberOfEvenNumbers: number[] = [];
+  numberOfOddNumbers: number[] = [];
+
+  onAddNumber(count: number) {
+    if (this.isEven(count)) {
+      this.numberOfEvenNumbers.push(count);
+    } else {
+      this.numberOfOddNumbers.push(count);
+    }
+  }
+
+  private isEven(n: number) {
+    return (n & 1) === 0;
+  }
 }
